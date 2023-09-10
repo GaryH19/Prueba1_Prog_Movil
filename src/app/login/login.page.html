@@ -1,0 +1,46 @@
+<app-header class="ion-text-center"></app-header>
+
+<br>
+<ion-content class="ion-padding">
+  <ion-img src="/assets/images/duocd.jpg" class="ion-img ion-img-fixed">DuocDriver</ion-img>
+  <br>
+  <form [formGroup]="formularioLogin" >
+    <ion-input 
+      formControlName="usuario"
+      label="Nombre de usuario: " 
+      label-placement="floating"
+      fill="outline"
+      placeholder="Ingrese nombre usuario: "
+      type="text"
+      color="success">
+    </ion-input>
+    <div *ngIf="errorMessageu" class="error-message">
+      {{ errorMessageu }}
+    </div>
+    <br>
+    <ion-input [clearOnEdit]="true" 
+      formControlName="contraseña"
+      label="Contraseña: " 
+      label-placement="floating"
+      fill="outline"
+      placeholder="Ingrese Contraseña: "
+      type="password"
+      color="success">
+    </ion-input>
+    <div *ngIf="errorMessagep" class="error-message">
+      {{ errorMessagep }}
+    </div>
+    <br>
+    <ion-button color="success" (click)="irAInicio()" >Ingresar</ion-button>
+    <ion-button color="success" (click)="irARecuperar()" fill="clear" >Recuperar Contraseña</ion-button>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Desarrollado por RGG</ion-title>
+    <p class="ion-text-center">Todos los Derechos Reservados ©</p>
+  </ion-toolbar>
+</ion-footer>
+
+
