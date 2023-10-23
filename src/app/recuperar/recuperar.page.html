@@ -1,0 +1,34 @@
+<app-header class="ion-text-center"></app-header>
+
+
+<br>
+<ion-content class="ion-padding">
+  <ion-img  src="/assets/images/olvideContraseña.jpg" class="olvideContraseña">olvideContraseña</ion-img>
+  <br>
+  <form [formGroup]='formularioRecuperar'>
+    <ion-input 
+      formControlName="usuarioRecuperar"
+      label="Nombre de usuario: " 
+      label-placement="floating"
+      fill="outline"
+      placeholder="Ingrese nombre usuario: "
+      type="text"
+      color="success">
+    </ion-input>
+    <div *ngIf="errorMessageu" class="error-message">
+      {{ errorMessageu }}
+    </div>
+  
+    <br>
+    <ion-button color="success" (click)="irALogin()" >Recuperar</ion-button>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Desarrollado por RGG</ion-title>
+    <p class="ion-text-center">Todos los Derechos Reservados ©</p>
+  </ion-toolbar>
+</ion-footer>
+
+

@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="lista"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Conductor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-card color="light">
+    <img [src]="userDos.image" [alt]="">
+    <ion-card-header>
+      <ion-card-title>{{ userDos.firstName }} {{ userDos.lastName }}</ion-card-title>
+      <p>Edad: {{ userDos.age }} <br> Fecha Nac: {{ userDos.birthDate }} <br> Fecha Nac: {{ userDos.birthDate }}  Carrera: {{ userDos.department }} <br> Correo: {{ userDos.email }} <br> Fecha Nac: {{ userDos.gender }} <br> Celular: {{ userDos.phone }} </p>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

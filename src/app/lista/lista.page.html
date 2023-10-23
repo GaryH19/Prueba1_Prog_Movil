@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista Conductores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="--ion-grid-column-padding: 10px;">
+    <ion-row>
+      <ion-col sizeMd="4" offsetSm="4" class="ion-margin">
+        <ion-list *ngFor="let user of users?.users">
+          <ion-item class="ion-text-center">
+            <ion-avatar slot="start" class="large-avatar">
+              <img src="{{ user.image }}" alt="">
+            </ion-avatar>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <h4>{{ user.firstName }} {{ user.lastName }}</h4>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-button color="success" shape="round" type="button" (click)="detalle(user)">Ver más</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
