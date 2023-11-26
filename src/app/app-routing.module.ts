@@ -20,15 +20,18 @@ const routes: Routes = [
   },
   {
     path: 'recuperar',
-    loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+    loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule),
+    canActivate: [LoginGuard]
   },
   {
     path: 'lista',
-    loadChildren: () => import('./lista/lista.module').then( m => m.ListaPageModule)
+    loadChildren: () => import('./lista/lista.module').then( m => m.ListaPageModule),
+    canActivate: [LoginGuard]
   },
   {
     path: 'conductor',
-    loadChildren: () => import('./conductor/conductor.module').then( m => m.ConductorPageModule)
+    loadChildren: () => import('./conductor/conductor.module').then( m => m.ConductorPageModule),
+    canActivate: [LoginGuard]
   },
 
 

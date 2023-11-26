@@ -23,6 +23,5 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HttpClientModule 
   ],
   declarations: [InicioPage],
-  providers: [StateService]
 })
 export class InicioPageModule {}

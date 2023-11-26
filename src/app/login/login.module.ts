@@ -18,6 +18,7 @@ import { HeaderModule } from '../header/header.module';
     HeaderModule,
     ReactiveFormsModule,
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
 })
+
 export class LoginPageModule {}

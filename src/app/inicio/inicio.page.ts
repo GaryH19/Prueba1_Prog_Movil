@@ -19,6 +19,7 @@ export class InicioPage implements OnInit {
     });
   }
 
+
   irAInicio() {
     this.stateServices.setTitulo = 'Página de Inicio';
     this.router.navigate(['/inicio']);
