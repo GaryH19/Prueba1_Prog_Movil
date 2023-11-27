@@ -33,8 +33,8 @@ export class LoginPage implements OnInit {
   constructor(private fb: FormBuilder,  private router:Router, private stateServices:StateService, private loginService: LoginService) { 
 
     this.formularioLogin=this.fb.group({
-      usuario: [""],
-      contraseña: [""]
+      usuario: ["", Validators.required],
+      contraseña: ["", Validators.required]
     })
   }
   
