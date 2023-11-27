@@ -13,7 +13,7 @@
     <img [src]="userDos.image" [alt]="">
     <ion-card-header>
       <ion-card-title>{{ userDos.firstName }} {{ userDos.lastName }}</ion-card-title>
-      <p>Edad: {{ userDos.age }} <br> Fecha Nac: {{ userDos.birthDate }} <br> Fecha Nac: {{ userDos.birthDate }}  Carrera: {{ userDos.department }} <br> Correo: {{ userDos.email }} <br> Fecha Nac: {{ userDos.gender }} <br> Celular: {{ userDos.phone }} </p>
+      <p>Edad: {{ userDos.age }} <br> Fecha Nac: {{ userDos.birthDate }} <br> Carrera: {{ userDos.company?.department }} <br> Correo: {{ userDos.email }} <br> Fecha Nac: {{ userDos.gender }} <br> Celular: {{ userDos.phone }} </p>
     </ion-card-header>
   </ion-card>
 </ion-content>

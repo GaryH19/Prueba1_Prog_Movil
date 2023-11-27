@@ -7,6 +7,7 @@ import { LoginService } from './login.service';
 interface Usuario{
   nombre: string;
   contraseña: string;
+  tipo: string;
 }
 
 @Component({
@@ -22,7 +23,14 @@ export class LoginPage implements OnInit {
 
   usuario1: Usuario = {
     nombre:"admin",
-    contraseña: "1234"
+    contraseña: "1234",
+    tipo: "admin"
+  }
+
+  usuario2: Usuario = {
+    nombre: "dusty",
+    contraseña: "Ac0105ca*",
+    tipo: "dev"
   }
 
 
@@ -41,26 +49,28 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  //Ingresar a pagina de inicio con Usuario valido
+  // Ingresar a la página de inicio con Usuario válido
   irAInicio() {
     if (!this.formularioLogin.value.usuario || !this.formularioLogin.value.contraseña) {
       this.errorMessageu = 'Los campos de usuario y contraseña son obligatorios.';
-      // return;
     }
-  
-    // Verificar las credenciales con el usuario predeterminado ("admin")
+
+    // Verificar las credenciales con los usuarios
     const nombreDeUsuario = this.formularioLogin.value.usuario;
     const contraseña = this.formularioLogin.value.contraseña;
-    
-    if (nombreDeUsuario === this.usuario1.nombre && contraseña === this.usuario1.contraseña) {
+
+    if (
+      (nombreDeUsuario === this.usuario1.nombre && contraseña === this.usuario1.contraseña) ||
+      (nombreDeUsuario === this.usuario2.nombre && contraseña === this.usuario2.contraseña)
+    ) {
+      // Acceso concedido para el usuario1 o usuario2 (con acceso completo)
       this.loginService.setIsLogged(true);
       this.nombre = nombreDeUsuario;
-      this.stateServices.setUsuario = nombreDeUsuario;  //Actualiza el nombre de usuario
+      this.stateServices.setUsuario = nombreDeUsuario; // Actualiza el nombre de usuario
       this.router.navigate(['inicio']);
-      
     } else {
       // Las credenciales son incorrectas, muestra un mensaje de error.
-      this.errorMessageu = 'Datos ingresados Incorrectos. Por favor, inténtelo de nuevo.';
+      this.errorMessageu = 'Datos ingresados incorrectos. Por favor, inténtelo de nuevo.';
     }
   }
 
