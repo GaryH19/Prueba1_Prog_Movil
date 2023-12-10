@@ -9,6 +9,7 @@ export class StateService {
 
   private titulo: BehaviorSubject<string> = new BehaviorSubject('Login de Acceso')
   private usuario: BehaviorSubject<string> = new BehaviorSubject('')
+  private resetLoginForm = new BehaviorSubject<boolean>(false);
   
   constructor() { }
 
@@ -26,5 +27,13 @@ export class StateService {
 
   set setUsuario(usuario: string) {
     this.usuario.next(usuario);
+  }
+
+  get resetLoginForm$() {
+    return this.resetLoginForm.asObservable();
+  }
+
+  triggerLoginFormReset(shouldReset: boolean) {
+    this.resetLoginForm.next(shouldReset);
   }
 }

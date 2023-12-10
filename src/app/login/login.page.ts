@@ -38,7 +38,12 @@ export class LoginPage implements OnInit {
   errorMessagep: string = '';
  
 
-  constructor(private fb: FormBuilder,  private router:Router, private stateServices:StateService, private loginService: LoginService) { 
+  constructor(
+    private fb: FormBuilder,
+    private router:Router, 
+    private stateServices:StateService, 
+    private loginService: LoginService
+    ) { 
 
     this.formularioLogin=this.fb.group({
       usuario: ["", Validators.required],
@@ -47,6 +52,12 @@ export class LoginPage implements OnInit {
   }
   
   ngOnInit() {
+    this.stateServices.resetLoginForm$.subscribe(shouldReset => {
+      if (shouldReset) {
+        this.formularioLogin.reset();
+        this.stateServices.triggerLoginFormReset(false);
+      }
+    });
   }
 
   // Ingresar a la página de inicio con Usuario válido
@@ -80,5 +91,4 @@ export class LoginPage implements OnInit {
     this.stateServices.setTitulo = 'Recuperar Contraseña';
     this.router.navigate(['/recuperar']);
   }
-
 }

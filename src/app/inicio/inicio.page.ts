@@ -29,6 +29,6 @@ export class InicioPage implements OnInit {
   irCerrar() {
     this.stateServices.setTitulo = 'Login de Acceso';
     this.router.navigate(['/login']);
+    this.stateServices.triggerLoginFormReset(true);
   }
-  
 }
