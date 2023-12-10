@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Prueba1</string>
-    <string name="title_activity_main">Prueba1</string>
-    <string name="package_name">com.example.app</string>
-    <string name="custom_url_scheme">com.example.app</string>
+    <string name="app_name">Te Llevo App</string>
+    <string name="title_activity_main">Te Llevo App</string>
+    <string name="package_name">com.duoc.tellevoapp</string>
+    <string name="custom_url_scheme">com.duoc.tellevoapp</string>
 </resources>
