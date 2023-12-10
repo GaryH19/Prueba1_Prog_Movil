@@ -1,0 +1,28 @@
+ion-card {
+    border-radius: 12px;
+    padding-top: 5%;
+    overflow: hidden;
+}
+
+ion-card img {
+    width: 90%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 3px solid #ffc409;
+}
+
+.ion-card-header {
+    background-color: var(--ion-color-light, #797979);
+}
+
+ion-card-title,
+ion-card-subtitle {
+    color: var(--ion-color-dark, black);
+    font-weight: bold;
+}
+
+ion-card-content p {
+    margin-bottom: 0;
+    font-size: 18px;
+    text-align: left;
+}

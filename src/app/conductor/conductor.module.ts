@@ -8,6 +8,7 @@ import { ConductorPageRoutingModule } from './conductor-routing.module';
 
 import { ConductorPage } from './conductor.page';
 import { HeaderModule } from "../header/header.module";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [ConductorPage],
@@ -16,7 +17,8 @@ import { HeaderModule } from "../header/header.module";
         FormsModule,
         IonicModule,
         ConductorPageRoutingModule,
-        HeaderModule
+        HeaderModule,
+        HttpClientModule
     ]
 })
 export class ConductorPageModule {}

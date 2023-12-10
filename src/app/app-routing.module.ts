@@ -29,7 +29,7 @@ const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
-    path: 'conductor',
+    path: 'conductor/:id',
     loadChildren: () => import('./conductor/conductor.module').then( m => m.ConductorPageModule),
     canActivate: [LoginGuard]
   },

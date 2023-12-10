@@ -12,14 +12,14 @@
       fill="outline"
       placeholder="Ingrese nombre usuario: "
       type="text"
-      color="success">
+      color="warning">
     </ion-input>
     <div *ngIf="errorMessageu" class="error-message">
       {{ errorMessageu }}
     </div>
   
     <br>
-    <ion-button color="success" (click)="irALogin()" >Recuperar</ion-button>
+    <ion-button color="warning" (click)="irALogin()" >Recuperar</ion-button>
   </form>
 </ion-content>
 

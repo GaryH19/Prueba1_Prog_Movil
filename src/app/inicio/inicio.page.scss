@@ -10,8 +10,19 @@
 }
 
 .imagen{
-    height: 65%;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
+.bienvenida{
+    margin-bottom: 0px;
+}
 
+.user{
+    margin-top: 0px;
+    color: rgb(247, 222, 0);
+}
   

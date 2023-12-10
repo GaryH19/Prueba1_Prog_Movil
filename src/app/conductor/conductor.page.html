@@ -9,12 +9,18 @@
 
 <!-- Tarjeta -->
 <ion-content class="ion-text-center">
-  <ion-card color="light">
-    <img [src]="userDos.image" [alt]="">
+  <ion-card color="light" *ngIf="userDos && userDos.picture && userDos.picture.large">
+    <img [src]="userDos.picture.large" [alt]="userDos.name?.first + ' ' + userDos.name?.last">
     <ion-card-header>
-      <ion-card-title>{{ userDos.firstName }} {{ userDos.lastName }}</ion-card-title>
-      <p>Edad: {{ userDos.age }} <br> Fecha Nac: {{ userDos.birthDate }} <br> Carrera: {{ userDos.company?.department }} <br> Correo: {{ userDos.email }} <br> Fecha Nac: {{ userDos.gender }} <br> Celular: {{ userDos.phone }} </p>
+      <ion-card-title>{{ userDos.name?.first | uppercase }} {{ userDos.name?.last | uppercase }}</ion-card-title>
+      <ion-card-subtitle>{{ userDos.company?.department }}</ion-card-subtitle>
     </ion-card-header>
+    <ion-card-content>
+      <p>Edad: {{ userDos.dob?.age }} <br>
+         Correo: {{ userDos.email }} <br>
+         Género: {{ userDos.gender }} <br>
+         Celular: {{ userDos.phone }}</p>
+    </ion-card-content>
   </ion-card>
 </ion-content>
 

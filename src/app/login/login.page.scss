@@ -1,11 +1,15 @@
 .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   
-  .button-container ion-button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
+.button-container ion-button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.imagen1 {
+  border-radius: 12px;
+  overflow: hidden;
+}

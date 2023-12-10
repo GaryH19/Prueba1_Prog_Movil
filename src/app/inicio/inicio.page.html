@@ -1,16 +1,15 @@
 <app-header class="ion-text-center"></app-header>
 
-<ion-content class="ion-padding ion-text-center">
-  <h3>Bienvenido a Duoc Drive</h3>
-  <h1> {{ nombreDeUsuario | uppercase}} </h1>
-  <br>
-  <ion-img src="/assets/images/Duoc3.jpg" class="imagen ion-img-fixed">Bienvenida</ion-img>
+<ion-content class="ion-padding ion-text-center" scrollY="false">
+  <h3 class="bienvenida">Bienvenido a Duoc Drive</h3>
+  <h1 class="user"> {{ nombreDeUsuario | uppercase}} </h1>
+  <ion-img src="/assets/images/Duoc3.jpg" class="imagen">Bienvenida</ion-img>
   <br>
 
   <!-- Contenedor para los botones -->
   <div class="button-container">
-    <ion-button color="success" routerLink="/lista">Ver Conductores</ion-button>
-    <ion-button color="danger" (click)="irCerrar()">Cerrar Sesión</ion-button>
+    <ion-button color="warning" routerLink="/lista">Ver Conductores</ion-button>
+    <ion-button color="primary" (click)="irCerrar()">Cerrar Sesión</ion-button>
   </div>
 </ion-content>
 
@@ -20,4 +19,3 @@
     <p>Todos los Derechos Reservados ©</p>
   </ion-toolbar>
 </ion-footer>
-

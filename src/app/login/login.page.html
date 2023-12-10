@@ -6,7 +6,8 @@
 
 <br>
 <ion-content class="ion-padding">
-  <ion-img src="/assets/images/Duoc2.jpg" class="ion-img ion-img-fixed">DuocDrive</ion-img>
+  <ion-img src="/assets/images/Duoc2.jpg" class="imagen1">DuocDrive</ion-img>
+  
   <br>
   <form [formGroup]="formularioLogin" >
     <ion-input 
@@ -16,7 +17,7 @@
       fill="outline"
       placeholder="Ingrese nombre usuario: "
       type="text"
-      color="success"
+      color="warning"
       (keyup.enter)="irAInicio()">
     </ion-input>
     <div *ngIf="errorMessageu" class="error-message">
@@ -31,7 +32,7 @@
       fill="outline"
       placeholder="Ingrese Contraseña: "
       type="password"
-      color="success"
+      color="warning"
       (keyup.enter)="irAInicio()">
     </ion-input>
     <div *ngIf="errorMessagep" class="error-message">
@@ -39,8 +40,8 @@
     </div>
     <br>
     <div class="button-container">
-      <ion-button color="success" (click)="irAInicio()">Ingresar</ion-button>
-      <ion-button color="warning" (click)="irARecuperar()">Recuperar Contraseña</ion-button>
+      <ion-button color="warning" (click)="irAInicio()">Ingresar</ion-button>
+      <ion-button color="primary" (click)="irARecuperar()">Recuperar Contraseña</ion-button>
     </div>
   </form>
 </ion-content>

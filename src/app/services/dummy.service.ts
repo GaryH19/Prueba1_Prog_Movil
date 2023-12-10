@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DummyService {
 
-private BASE_URL = 'https://dummyjson.com/users'
+  private BASE_URL = 'https://randomuser.me/api/';
 
-  constructor(
-
-    private http: HttpClient  //injeccion de dependencias
-
-  ) { }
+  constructor(private http: HttpClient) { }
 
   getDummyData(limit: number = 10) {
-    const params = new HttpParams().set('limit', limit.toString());
-    return this.http.get(this.BASE_URL, {params});
+    return this.http.get<any[]>(`${this.BASE_URL}?results=${limit}`);
+  }
+
+  getUserDetails(userId: string) {
+    return this.http.get<any>(`${this.BASE_URL}?id=${userId}`);
   }
 }

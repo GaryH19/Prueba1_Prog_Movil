@@ -1,15 +1,47 @@
-.user-box {
-    margin-bottom: 15px;
-    border: 2px solid #2fdf75;
+.user-card {
+    width: 90%;
+    margin: 0 auto;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--ion-color-light, #797979);
+
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--ion-color-light, white);
+    }
 }
 
-.transparent-list{
-    background-color: transparent !important;
+.large-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
 }
 
-.image-border{
+.image-border {
     border-radius: 50%;
-    background-color: rgb(159, 255, 215);
+    border: 3px solid var(--ion-color-warning ,#ffc409);
 }
+
+.ion-text-center {
+    text-align: center !important;
+}
+
+.bold-name {
+    font-weight: bold;
+    color: var(--ion-color-dark, black);
+}
+
+.ion-color-light {
+    .bold-name {
+        color: var(--ion-color-light, white);
+    }
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.ion-card-content {
+    text-align: center;
+}
+

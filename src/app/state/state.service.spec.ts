@@ -10,24 +10,34 @@ describe('StateService', () => {
   });
 
   it('debería ser creado', () => {
-    expect(service).toBeTruthy();
+    const servicio = TestBed.inject(StateService);
+    expect(servicio).toBeTruthy();
   });
 
   it('debería poder establecer y obtener el título', (done: DoneFn) => {
-    service.setTitulo = 'Nuevo Título';
+    const nuevoTitulo = 'Nuevo Título';
+    //Se establece un titulo nuevo
+    service.setTitulo = nuevoTitulo;
+    // Obtener el título y verificar
     service.getTitulo.subscribe(titulo => {
-      expect(titulo).toEqual('Nuevo Título');
+      expect(titulo).toEqual(nuevoTitulo);
       done();
     });
   });
 
   it('debería poder establecer y obtener el usuario', (done: DoneFn) => {
-    service.setUsuario = 'UsuarioPrueba';
+    const nuevoUsuario = 'UsuarioPrueba';
+    // Establecer el usuario
+    service.setUsuario = nuevoUsuario;
+    // Obtener el usuario y verificar
     service.getUsuario.subscribe(usuario => {
-      expect(usuario).toEqual('UsuarioPrueba');
+      expect(usuario).toEqual(nuevoUsuario);
       done();
     });
   });
+
+  // Se limpia el servicio antes de cada prueba
+  beforeEach(() => {
+    service = TestBed.inject(StateService);
+  });
 });
-
-

@@ -25,16 +25,16 @@ describe('LoginPage', () => {
     fixture.detectChanges();
   });
 
-  it('debe crear el componente', () => {
+  it('Debería crear el componente', () => {
     expect(component).toBeTruthy();
   });
 
-  it('debe crear un formulario con dos controles', () => {
+  it('Debería crear un formulario con dos controles', () => {
     expect(component.formularioLogin.contains('usuario')).toBeTruthy();
     expect(component.formularioLogin.contains('contraseña')).toBeTruthy();
   });
 
-  it('debe hacer que el usuario y la contraseña sean requeridos', () => {
+  it('Debería hacer que el usuario y la contraseña sean requeridos', () => {
     const usuarioControl = component.formularioLogin.get('usuario');
     const contraseñaControl = component.formularioLogin.get('contraseña');
   
@@ -48,4 +48,13 @@ describe('LoginPage', () => {
     }
   });
 
+  it('Debería mostrar un mensaje de error al ingresar credenciales incorrectas', () => {
+    const credencialesIncorrectas = {
+      usuario: 'usuarioIncorrecto',
+      contraseña: 'contraseñaIncorrecta'
+    };
+    component.formularioLogin.patchValue(credencialesIncorrectas);
+    component.irAInicio();
+    expect(component.errorMessageu).toEqual('Datos ingresados incorrectos. Por favor, inténtelo de nuevo.');
+  });
 });

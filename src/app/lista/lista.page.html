@@ -10,26 +10,18 @@
 <ion-content>
   <ion-grid style="--ion-grid-column-padding: 10px;">
     <ion-row>
-      <ion-col sizeMd="4" offsetSm="4" class="ion-margin">
-        <ion-list *ngFor="let user of users?.users" class="transparent-list">
-          <ion-item class="ion-text-center user-box">
-            <ion-avatar slot="start" class="large-avatar">
-              <img src="{{ user.image }}" alt="" class="image-border">
+      <ion-col sizeMd="4" offsetSm="4" class="ion-margin" *ngFor="let user of users">
+        <ion-card class="user-card">
+          <ion-card-header class="ion-text-center">
+            <ion-avatar class="large-avatar">
+              <img src="{{ user.picture.large }}" alt="" class="image-border">
             </ion-avatar>
-            <ion-grid>
-              <ion-row>
-                <ion-col>
-                  <h6>{{ user.firstName | uppercase }} {{ user.lastName | uppercase}}</h6>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col>
-                  <ion-button color="success" shape="round" type="button" (click)="detalle(user)">Ver más</ion-button>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-item>
-        </ion-list>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <h6 class="bold-name">{{ user.name.first | uppercase }} {{ user.name.last | uppercase }}</h6>
+            <ion-button color="warning" shape="round" type="button" class="margin-top" (click)="detalle(user)">Ver más</ion-button>
+          </ion-card-content>
+        </ion-card>        
       </ion-col>
     </ion-row>
   </ion-grid>
